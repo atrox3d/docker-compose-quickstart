@@ -5,7 +5,7 @@ WORKDIR /code
 ENV FLASK_APP=app.python
 ENV FLAS_RUN_HOST=0.0.0.0
 
-RUN apk add --nocache gcc musl-dev linux-headers
+RUN apk add --no-cache gcc musl-dev linux-headers
 
 COPY requirements.txt .
 
