@@ -15,11 +15,13 @@ def get_hit_count(retries=5):
             if retries == 0:
                 raise ce
             retries -= 1
-            print('redis connection error, waiting .5 secs...')
+            print(
+                'redis connection error, \
+                    waiting .5 secs...')
             time.sleep(0.5)
             print('retrying')
 
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return f'{count = }'
+    return f'Welcome visitor number: {count}'
